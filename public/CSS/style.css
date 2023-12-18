@@ -1,0 +1,506 @@
+body {
+  font-family: Poppins, sans-serif;
+  overflow: scroll;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Bagian Header */
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 100px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #029afa;
+  box-sizing: border-box;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.navbar a {
+  font-size: 1.15rem;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 2.5rem;
+}
+
+#check {
+  display: none;
+}
+
+.icons {
+  font-size: 2.8rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 5%;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .icons {
+    display: inline-flex;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #029afa;
+    transition: 0.3s ease;
+    overflow: hidden;
+  }
+
+  #check:checked ~ .navbar {
+    height: 17.7rem;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+
+  #check:checked ~ .navbar a {
+    transform: translateY(0);
+  }
+}
+
+.gaped {
+  top: 20%;
+  position: absolute;
+  left: 60%;
+}
+
+.p-gaped {
+  font-size: 15px;
+}
+
+.gaped h1 {
+  font-size: 4rem;
+  margin-top: -20px;
+  margin-bottom: -10px;
+}
+
+.gaped p {
+  text-align: justify;
+  margin-right: 50px;
+}
+
+.img-gap {
+  position: absolute;
+  top: 20%;
+  margin-left: 8%;
+}
+
+.home {
+  background-color: #84caf5;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Tombol */
+.raw-tombol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35%;
+}
+
+.col-tombol {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+
+button {
+  background-color: #029afa;
+  padding: 25px 100px;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  border-radius: 55px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #029afa;
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .raw-tombol {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    text-align: center;
+    height: 300px;
+    align-items: center;
+  }
+}
+
+/* Tentang */
+
+.tentang {
+  height: 500px;
+  margin-top: 150px;
+}
+
+.tentang h2 {
+  justify-content: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.tentang h3 {
+  justify-content: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tentang p {
+  justify-content: center;
+  margin: 0% 15%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.medsos-tentang {
+  margin-top: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  padding: 0px 40%;
+  cursor: pointer;
+  gap: 30%;
+}
+
+/* Testimoni */
+.testimoni {
+  display: flex;
+  padding: 40px 0px;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  align-items: center;
+}
+
+.inner {
+  max-width: 1200px;
+  padding: 0px 20px;
+}
+
+.border {
+  width: 160px;
+  height: 5px;
+  margin: 26px auto;
+  background: #029afa;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  max-width: 25%;
+  max-width: border-box;
+  padding: 15px;
+  flex: 25%;
+  padding: 15px;
+}
+
+.isitesti {
+  padding: 30px;
+  background: #029afa;
+  max-height: 80%;
+  color: white;
+}
+
+.isitesti img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  text-transform: uppercase;
+  margin: 20px 0px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .col {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.go-top-btn {
+  position: fixed;
+  background-color: #029afa;
+  bottom: 35px;
+  right: 35px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.go-top-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.belajar,
+.berlatih,
+.bertanding {
+  width: 30%;
+  padding: 1em;
+  border: 2px solid black;
+}
+
+.formula{
+  margin-bottom: 250px;
+  
+}
+
+.formula h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+/*footer*/
+footer {
+  width: 100%;
+  padding: 5px;
+  background-color: #029afa;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.grid-foot {
+  display: grid;
+  gap: 20%;
+
+  padding: 20px;
+  margin-top: 20px;
+  left: 0;
+  bottom: 0;
+}
+
+.grid-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-foot {
+  grid-column: 1 / 4;
+  font-size: 20px;
+  color: white;
+}
+
+.copyright {
+  grid-column: 1 / 4;
+  background-color: white;
+  width: 100%;
+}
+
+.flex-follow img {
+  padding: 10px;
+  color: white;
+}
+
+.flex-follow h4 {
+  color: white;
+}
+
+.flex-kontak {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.flex-kontak a {
+  text-decoration: none;
+  padding: 5px;
+  color: white;
+  text-align: justify;
+}
+.flex-kontak h4 {
+  color: white;
+}
+
+.flex-lokasi {
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+}
+
+.flex-lokasi a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.lokasi h4 {
+  color: white;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5); /* Ubah warna latar belakang agar teks lebih terbaca */
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  background-color: #000000;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
