@@ -24,14 +24,15 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>ssss</td>
-                            <td>ssss</td>
-                            <td>ssss</td>
-                            <td>ssss</td>
-                            <td>ssss</td>
-                            <td>ssss</td>
-                            <td>ssss</td>
+                            <td>1</td>
+                            <td>dani</td>
+                            <td>Gilang</td>
+                            <td>081907429076</td>
+                            <td>Reguler</td>
+                            <td>Ketintang</td>
+                            <td>BCA</td>
                         </tr>
+                        
                     </tbody>
                 </table>
             

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dataRegis;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,7 @@ class adminController extends Controller
         $auth = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
 
         if ($auth) {
-            return redirect()->route('dashboardAdmin');
+            return redirect()->route('dashboard');
         } else {
             return redirect()->back()->with(['pesan' => 'Akun tidak terdaftar!']);
         }
@@ -37,5 +38,12 @@ class adminController extends Controller
         Auth::logout();
 
         return redirect('');
+    }
+
+    public function index() 
+    {
+        
+
+        return view('loginAdmin');
     }
 }

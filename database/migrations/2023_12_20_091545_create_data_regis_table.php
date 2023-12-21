@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('alamat', 100);
             $table->string('nohp', 25);
             $table->enum('program',['reguler', 'intensif', 'super']);
-            $table->enum('lokasi', ['LBB GapEd Ketintang', 'LBB GapEd Bubutan', 'LBB GapEd Semampir']);
-            $table->enum('metode_pembayaran', ['Di Tempat', 'DANA e-wallet', 'M-Banking BCA']);
+            $table->enum('lokasi', ['Ketintang', 'Bubutan', 'Semampir']);
+            $table->enum('metode_pembayaran', ['DiTempat', 'DANA', 'BCA']);
             
             
             $table->timestamps();

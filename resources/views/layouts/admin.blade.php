@@ -43,7 +43,7 @@
             <ul class="list-unstyled components">
                 
                 <li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
-                    <a href="{{ route('dashboardAdmin') }}">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 
                 

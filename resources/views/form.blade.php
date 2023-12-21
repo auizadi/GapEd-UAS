@@ -10,7 +10,7 @@
     <section class="container">
       <!--kiri-->
       <header>Formulir Pendaftaran</header>
-      <form action="{{ route('form') }}" method="POST"  class="form">
+      <form action="/form/post"  method="POST" class="form">
         @csrf
       
         <div class="input-box">
@@ -35,20 +35,20 @@
           <div class="input-box">
             <label for="program">Pilih Program</label>
             <select id="program" name="program">
-              @foreach ($program as $prog )
-                  <option value="{{ $prog -> program}}">{{ ucfirst($prog -> program) }}</option>
-              @endforeach
+              <option value="reguler">Reguler</option>
+              <option value="intensif">Intensif</option>
+              <option value="super">Super</option>
               
               
             </select>
           </div>
 
-          {{-- <div class="input-box">
+          <div class="input-box">
             <label for="lokasi">Pilih Lokasi</label>
             <select id="lokasi" name="lokasi">
-              @foreach ($lokasi as $lok)
-                  <option value="{{ $lok }}">{{ ucfirst($lok) }}</option>
-              @endforeach
+              <option value="ketintang">LBB Gaped Ketintang</option>
+              <option value="bubutan">LBB Gaped Bubutan</option>
+              <option value="ketintang">LBB Gaped Semampir</option>
               
             </select>
           </div>
@@ -56,13 +56,13 @@
           <div class="input-box">
             <label for="bayar">Pilih Metode Pembayaran</label>
             <select id="bayar" name="metode_pembayaran">
-              @foreach ($pembayaran as $metode)
-                  <option value="{{ $metode }}">{{ ucfirst($metode) }}</option>
-              @endforeach
+             <option value="ditempat">Ditempat</option>
+             <option value="dana">e-wallet DANA</option>
+             <option value="bca">M-Banking BCA</option>
               
             </select>
           </div>
-        </div> --}}
+        </div>
         <!--akhir kanan-->
         <div class="kirim">
             <input type="submit" value="KIRIM">

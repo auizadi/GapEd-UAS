@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\dashboard;
 use App\Http\Controllers\dataReg;
 use App\Http\Controllers\formController;
 use Illuminate\Support\Facades\Route;
@@ -23,25 +24,17 @@ Route::get('/', function () {
 
 
 //formulir
-Route::get('/Form', function () {
-    return view('form');
-})->name('form');
 
-Route::post('/form', [formController::class, 'storeform'])->name('form');
+Route::get('/form', [formController::class, 'index'])->name('form');
+Route::post('/form/post', [formController::class, 'storeform'])->name('store');
 
 //admin
-Route::get('/admin', function () {
-    return view('loginAdmin');
-})->name('loginAdmin');
+Route::get('/admin', [adminController::class, 'index'])->name('admin');
 
 Route::post('/login/auth', [adminController::class, 'login'])->name('login');
+Route::get('/login/dashboard', [dashboard::class, 'index'])->name('dashboard');
 
 
 
-Route::get('/Dashboardadmin', function () {
-    return view('dashboardAdmin');
-})->name('dashboardAdmin');
 
-Route::get('/selamat', function(){
-    return view('storeForm');
-})->name('selamat');
+

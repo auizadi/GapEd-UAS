@@ -22,10 +22,5 @@ class dataRegis extends Model
         'metode_pembayaran',
     ];
 
-    protected $casts = [
-        'program' => 'enum',
-        'lokasi' => 'enum',
-        'metode_pembayaran' => 'enum',
-
-    ];
+   
 }
