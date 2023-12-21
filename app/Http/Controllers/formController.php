@@ -8,53 +8,25 @@ use Illuminate\Support\Facades\Validator;
 
 class formController extends Controller
 {
+    public function index() 
+    {
+        return view('form');
+    }
+
     public function storeform(Request $request)
     {
-        // Pengecekan jika tidak ada mahasiswa yang sedang login
         
-        $program = dataRegis::all();
-        return view('dashboardAdmin', compact('program'));
-        // Masukkan semua data yg dikirim ke variable $data
-        $data = $request->all();
+        $store = new dataRegis();
 
-        // Buat variable $validate kemudian isinya Validator::make(datanya, [nama_field => peraturannya])
-        $validate = Validator::make($data, [
-            'nama_lengkap' => ['required'],
-            'alamat' => ['required'],
-            'nohp' => ['required'],
-            'program' => ['required'],
-            'lokasi' => ['required'],
-            'metode_pembayaran' => ['required'],
-        ]);
+        $store -> nama_lengkap = $request -> nama_lengkap;
+        $store -> alamat = $request -> alamat;
+        $store -> nohp = $request -> nohp;
+        $store -> program = $request -> program;
+        $store -> lokasi = $request -> lokasi;
+        $store -> metode_pembayaran = $request -> metode_pembayaran;
 
-        // Pengecekan jika validate fails atau gagal
-        if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate)->withInput();
-        }
+        $store->save();
 
-        
-
-        
-        // Membuat variable $pengaduan isinya Memasukkan data kedalam table Pengaduan
-        $dataRegis = dataRegis::create([
-            
-
-            'nama_lengkap' => $data['nama_lengkap'],
-            'alamat' => $data['alamat'],
-            'nohp' => $data['nohp'],
-            'program' => $data['program'],
-            'lokasi' => $data['lokasi'],
-            'metode_pembayaran' => $data['metode_pembayaran'],
-            
-        ]);
-
-        // Pengecekan variable $pengaduan
-        if ($dataRegis) {
-            // Jika mengirim pengaduan berhasil
-            return redirect()->route('selamat')->with(['success' => 'Berhasil terkirim!']);
-        } else {
-            // Jika mengirim pengaduan gagal
-            return redirect()->back()->with(['danger' => 'Gagal terkirim!']);
-        }
+        return redirect()->back()->with('pesan', 'Pendaftaran Berhasil');
     }
 }
