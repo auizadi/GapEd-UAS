@@ -10,20 +10,22 @@
     <section class="container">
       <!--kiri-->
       <header>Formulir Pendaftaran</header>
-      <form action="#" class="form">
+      <form action="{{ route('form') }}" method="POST"  class="form">
+        @csrf
+      
         <div class="input-box">
           <label>Nama Lengkap</label>
-          <input type="text" placeholder="Masukkan Nama Lengkap" required />
+          <input type="text" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" required />
         </div>
 
         <div class="input-box">
           <label>Alamat</label>
-          <input type="text" placeholder="Masukkan Alamat" required />
+          <input type="text" name="alamat" placeholder="Masukkan Alamat" required />
         </div>
 
         <div class="input-box">
           <label>No.Handphone (aktif Whatsapp)</label>
-          <input type="number" placeholder="Masukkan Nomor" required />
+          <input type="number" name="nohp" placeholder="Masukkan Nomor" required />
         </div>
 
         <!--akhir  kiri-->
@@ -32,34 +34,35 @@
         <div class="column">
           <div class="input-box">
             <label for="program">Pilih Program</label>
-            <select id="program">
-              <option value="program">Pilih Program</option>
-              <option value="reguler">Reguler</option>
-              <option value="intensif">Intensif</option>
-              <option value="super">Super</option>
+            <select id="program" name="program">
+              @foreach ($program as $prog )
+                  <option value="{{ $prog -> program}}">{{ ucfirst($prog -> program) }}</option>
+              @endforeach
+              
+              
             </select>
           </div>
 
-          <div class="input-box">
+          {{-- <div class="input-box">
             <label for="lokasi">Pilih Lokasi</label>
-            <select id="lokasi">
-              <option value="lokasi">Pilih Lokasi</option>
-              <option value="ketintang">LBB GapEd Ketintang</option>
-              <option value="bubutan">LBB GapEd Bubutan</option>
-              <option value="semampir">LBB GapEd Semampir</option>
+            <select id="lokasi" name="lokasi">
+              @foreach ($lokasi as $lok)
+                  <option value="{{ $lok }}">{{ ucfirst($lok) }}</option>
+              @endforeach
+              
             </select>
           </div>
 
           <div class="input-box">
-            <label for="bayar">Pilih Lokasi</label>
-            <select id="bayar">
-              <option value="bayar">Pilih Metode Pembayaran</option>
-              <option value="cash">Di Tempat</option>
-              <option value="dana">DANA e-wallet</option>
-              <option value="mobile">M-Banking BCA</option>
+            <label for="bayar">Pilih Metode Pembayaran</label>
+            <select id="bayar" name="metode_pembayaran">
+              @foreach ($pembayaran as $metode)
+                  <option value="{{ $metode }}">{{ ucfirst($metode) }}</option>
+              @endforeach
+              
             </select>
           </div>
-        </div>
+        </div> --}}
         <!--akhir kanan-->
         <div class="kirim">
             <input type="submit" value="KIRIM">
